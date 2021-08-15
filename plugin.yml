@@ -1,0 +1,8 @@
+main: me.lablyteam.bankslab.BanksLabMain
+version: 0.1
+name: BanksLab
+authors: [LablyTeam, iAtog]
+description: Bank plugin 4 ur server
+softdepend: [Vault, ProtocolLib]
+
+commands:

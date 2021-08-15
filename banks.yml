@@ -1,0 +1,12 @@
+default:
+  name: "My Bank"
+  configuration:
+    interest-tax: 1
+    # In minutes
+    interest-timestamp: 5
+lably-bank:
+  name: "Lably Bank"
+  configuration:
+    interest-tax: 1
+    # In minutes
+    interest-timestamp: 5
