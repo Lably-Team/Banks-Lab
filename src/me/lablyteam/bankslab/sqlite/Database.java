@@ -34,8 +34,8 @@ public abstract class Database {
         	PreparedStatement ps = connection.prepareStatement("SELECT * FROM " + table + " WHERE player = ? OR (player IS NULL AND ? IS NULL)");
         	ResultSet rs = ps.executeQuery();
         	close(ps,rs);
-        }catch(SQLException e) {
-        	// Memory leak sucks
+        }catch(SQLException ex) {
+        	ex.printStackTrace();
         }
     }
     
