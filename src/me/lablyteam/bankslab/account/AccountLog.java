@@ -5,6 +5,8 @@ import java.util.UUID;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
+import me.lablyteam.bankslab.enums.AccountMethod;
+
 public class AccountLog {
 	
 	private AccountMethod method;

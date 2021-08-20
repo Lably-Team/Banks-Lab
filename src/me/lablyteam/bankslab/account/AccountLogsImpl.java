@@ -7,6 +7,7 @@ import java.util.UUID;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
+import me.lablyteam.bankslab.enums.AccountMethod;
 import me.lablyteam.bankslab.sqlite.Database;
 
 public class AccountLogsImpl implements AccountLogs {

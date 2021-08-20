@@ -12,6 +12,7 @@ import org.bukkit.entity.Player;
 import me.lablyteam.bankslab.BanksLabMain;
 import me.lablyteam.bankslab.api.events.BankInterestReceiveEvent;
 import me.lablyteam.bankslab.bank.Bank;
+import me.lablyteam.bankslab.enums.AccountMethod;
 import me.lablyteam.bankslab.lib.Utility;
 import me.lablyteam.bankslab.lib.YamlFile;
 import me.lablyteam.bankslab.sqlite.Database;

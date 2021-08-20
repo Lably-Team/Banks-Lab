@@ -7,6 +7,8 @@ import java.util.UUID;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
+import me.lablyteam.bankslab.enums.AccountMethod;
+
 public interface AccountLogs {
 	List<String> getAllLog();
 	AccountLog getLog(int index);

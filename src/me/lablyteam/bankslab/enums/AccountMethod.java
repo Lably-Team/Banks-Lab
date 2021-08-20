@@ -1,4 +1,4 @@
-package me.lablyteam.bankslab.account;
+package me.lablyteam.bankslab.enums;
 
 public enum AccountMethod {
 	WITHDRAW(),
