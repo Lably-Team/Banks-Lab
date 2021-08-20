@@ -1,4 +1,4 @@
-package me.lablyteam.bankslab.account;
+package me.lablyteam.bankslab.account.logging;
 
 import java.util.ArrayList;
 import java.util.List;

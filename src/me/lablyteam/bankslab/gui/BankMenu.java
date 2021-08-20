@@ -12,7 +12,7 @@ import org.bukkit.inventory.ItemStack;
 
 import me.lablyteam.bankslab.BanksLabMain;
 import me.lablyteam.bankslab.account.Account;
-import me.lablyteam.bankslab.account.AccountLog;
+import me.lablyteam.bankslab.account.logging.AccountLog;
 import me.lablyteam.bankslab.builders.ItemBuilder;
 import me.lablyteam.bankslab.builders.SkullItemBuilder;
 import me.lablyteam.bankslab.lib.Utility;

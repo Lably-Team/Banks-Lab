@@ -3,6 +3,7 @@ package me.lablyteam.bankslab.account;
 import org.bukkit.entity.Player;
 
 import me.lablyteam.bankslab.BanksLabMain;
+import me.lablyteam.bankslab.account.logging.AccountLogs;
 import me.lablyteam.bankslab.bank.Bank;
 
 public interface Account {

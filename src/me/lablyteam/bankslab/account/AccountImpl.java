@@ -10,6 +10,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 import me.lablyteam.bankslab.BanksLabMain;
+import me.lablyteam.bankslab.account.logging.AccountLogs;
+import me.lablyteam.bankslab.account.logging.AccountLogsImpl;
 import me.lablyteam.bankslab.api.events.BankInterestReceiveEvent;
 import me.lablyteam.bankslab.bank.Bank;
 import me.lablyteam.bankslab.enums.AccountMethod;
