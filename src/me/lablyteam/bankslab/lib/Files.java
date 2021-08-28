@@ -7,11 +7,13 @@ public class Files {
 	private YamlFile config;
 	private YamlFile banks;
 	private YamlFile lang;
+	private YamlFile items;
 	
 	public Files(BanksLabMain main) {
 		this.config = main.getConfig();
 		this.banks = new YamlFile(main, "banks");
 		this.lang = new YamlFile(main, "lang");
+		this.items = new YamlFile(main, "items");
 	}
 	
 	public YamlFile getConfig() {
@@ -24,6 +26,10 @@ public class Files {
 	
 	public YamlFile getLang() {
 		return lang;
+	}
+	
+	public YamlFile getItems() {
+		return items;
 	}
 	
 	public void reload() {
