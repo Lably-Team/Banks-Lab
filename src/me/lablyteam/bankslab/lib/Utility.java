@@ -2,6 +2,8 @@ package me.lablyteam.bankslab.lib;
 
 import java.text.NumberFormat;
 
+import org.bukkit.ChatColor;
+
 public class Utility {
 	public static String formatCurrency(double currency) {
 		NumberFormat formatter = NumberFormat.getCurrencyInstance();
@@ -21,5 +23,9 @@ public class Utility {
 	
 	public static double decreaseByPercentage(double number, double percentage) {
 		return number * percentage / 100;
+	}
+	
+	public static String colorize(String text) {
+		return ChatColor.translateAlternateColorCodes('&', text);
 	}
 }

@@ -1,2 +1,7 @@
 interest-message:
   - '§aRecibiste un interes de %s monedas!'
+already-has-account: "&cYa tienes una cuenta."
+no-account: "&cNo tienes una cuenta."
+created-account: "&aNueva cuenta de banco creada en: %s"
+insert-number: "&cDebes insertar un número."
+set-money: "&aEstableciste tu dinero a &6%s"

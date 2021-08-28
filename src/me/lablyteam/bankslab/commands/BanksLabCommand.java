@@ -11,6 +11,7 @@ import me.lablyteam.bankslab.BanksLabMain;
 import me.lablyteam.bankslab.account.Account;
 import me.lablyteam.bankslab.bank.Bank;
 import me.lablyteam.bankslab.lib.Utility;
+import me.lablyteam.bankslab.lib.YamlFile;
 
 @Command(names = {
 		"bankslab", "blp"
@@ -18,9 +19,11 @@ import me.lablyteam.bankslab.lib.Utility;
 public class BanksLabCommand implements CommandClass {
 	
 	private BanksLabMain main;
+	private YamlFile lang;
 	
 	public BanksLabCommand(BanksLabMain main) {
 		this.main = main;
+		this.lang = main.getFiles().getLang();
 	}
 	
 	@Command(names = "")
@@ -37,7 +40,7 @@ public class BanksLabCommand implements CommandClass {
 	@Command(names = "bank", desc = "Open bank menu")
 	public void bankCommand(@Sender Player player) {
 		if(!main.getDatabase().hasAccount(player)) {
-			player.sendMessage("§cNo tienes una cuenta.");
+			player.sendMessage(Utility.colorize(lang.getString("no-account")));
 			return;
 		}
 		main.getBankMenu().openMenu(player);
@@ -46,39 +49,41 @@ public class BanksLabCommand implements CommandClass {
 	@Command(names = "create")
 	public void createAccount(@Sender Player player) {
 		if(main.getDatabase().hasAccount(player)) {
-			player.sendMessage("§cYa tienes una cuenta.");
+			player.sendMessage(Utility.colorize(lang.getString("already-has-account")));
 			return;
 		}
 		Account newAccount = Account.createAccount(main, player);
 		Bank bank = newAccount.getBank();
-		player.sendMessage("§aNueva cuenta de banco creada en: "+bank.getDisplayName()+" §7["+bank.getId()+"]");
+		String format = String.format(Utility.colorize(lang.getString("created-account")), bank.getDisplayName());
+		player.sendMessage(format);
 	}
 	
 	@Command(names = "set-money")
 	public void setMoney(@Sender Player player, @OptArg("-1") String amount) {
 		if(!main.getDatabase().hasAccount(player)) {
-			player.sendMessage("§cNo tienes una cuenta.");
+			player.sendMessage(Utility.colorize(lang.getString("no-account")));
 			return;
 		}
+		String insertNumber = Utility.colorize(lang.getString("insert-number"));
 		if(!isInt(amount)) {
-			player.sendMessage("§cDebes insertar un número.");
+			player.sendMessage(insertNumber);
 			return;
 		}
 		int money = Integer.valueOf(amount);
 		if(money < 0) {
-			player.sendMessage("§cDebes insertar un número.");
+			player.sendMessage(insertNumber);
 			return;
 		}
 			
 		Account account = main.getAccount(player);
 		account.setMoney(money);
-		player.sendMessage("§aEstableciste tu dinero a §6"+Utility.formatCurrency(money));
+		player.sendMessage(String.format(Utility.colorize(lang.getString("set-money")), Utility.formatCurrency(money)));
 	}
 	
 	@Command(names = "check-interest")
 	public void checkInterest(@Sender Player player) {
 		if(!main.getDatabase().hasAccount(player)) {
-			player.sendMessage("§cNo tienes una cuenta.");
+			player.sendMessage(Utility.colorize(lang.getString("no-account")));
 			return;
 		}
 		
