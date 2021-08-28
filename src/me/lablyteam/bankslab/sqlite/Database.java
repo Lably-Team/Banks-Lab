@@ -40,7 +40,6 @@ public abstract class Database {
     }
     
     public Account createAccount(Player player, Bank bank, double startBalance) {
-    	
         try (Connection conn = getSQLConnection(); PreparedStatement statement = conn.prepareStatement("INSERT INTO " + table + " (player, money, log, bank, lastinterest) VALUES(?, ?, ?, ?, ?);")) {
         	statement.setString(1, player.getUniqueId().toString());
         	statement.setString(2, String.valueOf(startBalance));
