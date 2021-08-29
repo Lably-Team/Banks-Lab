@@ -12,11 +12,13 @@ public class AccountLog {
 	private AccountMethod method;
 	private int amount;
 	private UUID uuid;
+	private long createdAt;
 	
-	public AccountLog(AccountMethod method, int amount, Player player) {
+	public AccountLog(AccountMethod method, int amount, long createdAt, Player player) {
 		this.method = method;
 		this.amount = amount;
 		this.uuid = player.getUniqueId();
+		this.createdAt = createdAt;
 	}
 	
 	public AccountMethod getMethod() {
@@ -33,6 +35,10 @@ public class AccountLog {
 	
 	public UUID getPlayerUUID() {
 		return uuid;
+	}
+	
+	public long createdAt() {
+		return createdAt;
 	}
 	
 	public String toString() {

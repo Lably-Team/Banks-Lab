@@ -38,7 +38,7 @@ public class AccountLogsImpl implements AccountLogs {
 
 	@Override
 	public void addLog(AccountMethod method, int amount) {
-		log.add(method.name().toLowerCase()+":"+amount+":"+getPlayer().getUniqueId());
+		log.add(method.name().toLowerCase()+":"+amount+":"+getPlayer().getUniqueId()+":"+System.currentTimeMillis());
 	}
 
 	@Override

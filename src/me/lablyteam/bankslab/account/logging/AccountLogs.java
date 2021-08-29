@@ -22,7 +22,8 @@ public interface AccountLogs {
 		AccountMethod method = AccountMethod.valueOf(splitted[0].toUpperCase());
 		int amount = Integer.valueOf(splitted[1]);
 		Player player = Bukkit.getPlayer(UUID.fromString(splitted[2]));
-		return new AccountLog(method, amount, player);
+		long createdAt = Long.valueOf(splitted[3]);
+		return new AccountLog(method, amount, createdAt, player);
 	}
 	
 	default List<AccountLog> parseAll() {
