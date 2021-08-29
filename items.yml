@@ -1,0 +1,30 @@
+items:
+  close:
+    material: BARRIER
+    name: "&cClose"
+  withdraw:
+    material: DISPENSER
+    name: "&cWithdraw"
+    lore:
+      - '&7Withdraw money from your bank'
+      - ' '
+      - '&e&lCLICK RIGHT&7 for withdraw all'
+  deposit:
+    material: CHEST
+    name: "&aDeposit"
+    lore:
+      - '&7Deposit money to your bank'
+      - ' '
+      - '&e&lCLICK RIGHT&7 for deposit all'
+  bank_status:
+    name: "&bBank status"
+    lore:
+      - ' '
+      - '&7Current balance:&6 %formatted_balance%'
+      - '&7Bank:&b %bank_name%'
+  transactions:
+    material: MAP
+    name: "&aRecent transactions"
+    log-format: "%plus% &6%money%, &7%method_name% &9%time% ago"
+  glass:
+    data_id: 7
