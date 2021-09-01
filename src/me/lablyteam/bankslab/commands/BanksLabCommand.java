@@ -46,7 +46,7 @@ public class BanksLabCommand implements CommandClass {
 		main.getBankMenu().openMenu(player);
 	}
 	
-	@Command(names = "create")
+	@Command(names = "create", desc = "Create a account")
 	public void createAccount(@Sender Player player) {
 		if(main.getDatabase().hasAccount(player)) {
 			player.sendMessage(Utility.colorize(lang.getString("already-has-account")));
