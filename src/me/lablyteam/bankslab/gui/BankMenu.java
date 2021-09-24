@@ -85,8 +85,11 @@ public class BankMenu {
 			List<String> lore = new ArrayList<>();
 			int max = main.getConfig().getInt("max-transactions-log", 15);
 			for(int i = account.getLogs().size() - 1; i >= 0; i--) { // AccountLog log : account.getLogs().parseAll()
-				if(lore.size() > max) {
+				if(lore.size() > max || i < 0) {
 					break;
+				}
+				if(account.getLogs().getAllLog().get(i) == null || account.getLogs().getAllLog().get(i).isEmpty()) {
+					continue;
 				}
 				AccountLog log = account.getLogs().getLog(i);
 				String plus = (log.getMethod() == AccountMethod.DEPOSIT ? "§a+" : "§c-") + "§r";
